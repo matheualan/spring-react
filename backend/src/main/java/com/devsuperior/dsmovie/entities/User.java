@@ -1,30 +1,29 @@
 package com.devsuperior.dsmovie.entities;
 
 import javax.persistence.*;
-import java.util.UUID;
 
 @Entity
 @Table(name = "tb_user")
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String email;
 
     public User() {
     }
 
-    public User(UUID id, String email) {
+    public User(Long id, String email) {
         this.id = id;
         this.email = email;
     }
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
